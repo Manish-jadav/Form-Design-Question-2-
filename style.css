@@ -1,0 +1,67 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: white(114, 109, 109);
+    color:black;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center; 
+    
+  }
+.re_form{
+    color: rgb(115, 106, 106);
+    text-align: center;
+}
+.tble{
+
+    background-image: linear-gradient(to right, rgba(200, 87, 87, 0.5), rgb(14, 225, 204,0.5));
+    
+    color: rgb(36, 33, 33);
+    border-radius: 20px;
+    box-shadow: 5px 5px 3px black; 
+    padding: 20px;
+    margin-left: 10px;
+    margin-top: 60px;
+}
+td{
+    padding: 7px;
+    padding-left: 20px;
+
+    font-size: 20px;
+}
+.input_h_w{
+    width: 170px;
+    height: 30px;
+}
+#submit,#reset{
+    height: 40px;
+    width: 100px;
+    float: right;
+    font-size: 18px;
+    background-color: transparent;
+    margin-top: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit:hover,#reset:hover{
+    background-color: blue;
+    color: white;
+}
+#reset{
+    background-color: transparent;
+
+}
+.table2{
+    margin-top: 50px;
+    margin-left: 30px;
+    background-color: rgb(239, 228, 228);
+    
+}
+th{
+    padding: 10px;
+}
