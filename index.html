@@ -5,163 +5,117 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Design Problem - 3 The Wallet Bank</title>
+    <title>Form</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  -->
+    <script src="script.js"></script>
 </head>
 
-<body class="body">
+<body>
+    <form oninput="result.value = slider.value" name="myForm" onsubmit="event.preventDefault();Onsubmit()">
+        <table class="tble">
+            <tr>
+                <td>
+                    <h1 class="">Registration Form</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>Name<span id="nm">*</span></td>
+                <td><input type="text" name="name" id="name" placeholder="Enter Name.." class="input_h_w" required autofocus></td>
+            </tr>
+            <tr>
+                <td>Email<span id="mail">*</span></td>
+                <td><input type="email" name="email" id="email" placeholder="i.e., abc12@xy.xy" class="input_h_w" required></td>
+            </tr>
+            <tr>
+                <td>Phone Number<span id="no">*</span> </td>
+                <td><input type="text" name="number" id="number" placeholder="i.e., 1234567890" class="input_h_w"
+                        maxlength="10" required></td>
+            </tr>
+            <tr>
+                <td>Birthdate<span id="dt">*</span></td>
+                <td><input type="date" name="date" id="date" class="input_h_w" required></td>
+            </tr>
+            <tr>
+                <td> Appointment time :</td>
+                <td><input type="time" name="time" id="time" class="input_h_w" required></td>
+            </tr>
+            <tr>
+                <td>Favorite Color :</td>
+                <td><select name="color" id="color" class="input_h_w">
+                        <option value="Red">Red</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Black">Black</option>
+                        <option value="White">White</option>
+                        <option value="White">Blue</option>
+                        <option value="White">Orange</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Payment Method :</td>
+                <td>
+                    <div>Credit Card <input type="radio" name="redio" id="radio" value="Credit Card " required></div>
+                    <div>Debit Card <input type="radio" name="redio" id="radio" value="Debit Card " required></div>
+                    <div>Net Banking <input type="radio" name="redio" id="radio" value="Net Banking " required></div>
+                </td>
+            </tr>
+            <tr>
+                <td> Age :</td>
+                <td><output name="result" for="slider"> 50</output>
+                    <input type="range" name="Age" id="slider" max="100" min="1" step="1" value="50"
+                        class="multi-range" required>
+                </td>
 
-<!-- --------------------------------------------------Header Part ------------------------------------------------------------- -->
-    <header>
-        <div class="row">
-            <div class="col-xl-5 col-sm-5 col-md-5 col-5 col-lg-5 col-5" style="padding-bottom: 100px;">
-                <div class="mobile_img"><img src="./mobile.jpg" alt="mobile img" height="100%" width="200px"></div>
-                <div class="wallet">
-                    <img src="./wallet.png" alt="wallet" height="50xp" width="50px">
-                    <p class="wallet_color"><span class="span">THE</span><br><span class="span"> WALLET <br><span
-                                class="span">BANK</span></p>
+            </tr>
+            <tr>
+                <td> Car :</td>
+                <td>
+                    <div> BMW <input type="checkbox" name="checkbox" id="checkbox" value="BMW" ></div>
+                    <div> Volvo <input type="checkbox" name="checkbox" id="checkbox" value="Volvo" ></div>
+                    <div> Thar <input type="checkbox" name="checkbox" id="checkbox" value="Thar" ></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Upload Photo :</td>
+                <td><input type="file" name="file" id="file" required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="submit" id="submit" value="Submit"></td>
+                <td><input type="reset" name="reset" id="reset"></td>
+            </tr>
+    </form>
+    <br><br><br>
+    <div id="msg"></div>
+    <br>
+    <table class="table-bordered table-hover table2" id="table" border="1">
+        <tr>
+            <td colspan="11"><h2>Data From Local Storage </h2></td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Phone Number</th>
+            <th>BirtdDate</th>
+            <th>Appointment Time</th>
+            <th>Favorite Color</th>
+            <th>Payment Metdod</th>
+            <th>Age</th>
+            <th>Car</th>
+            <th>Photo</th>
+            <th>Action</th>
+        </tr>
+    </table>
 
-                </div>
-                <div class="mobile_content">
-                    <p>THE<br> MOBILE <br>WALLET</p>
-                    <p><img src="./bar-code.png" alt="bar code" height="120px" width="120px"></p>
-                </div>
-            </div>
-
-            <div class="col-xl-7 col-sm-7 col-md-7 col-7 col-lg-7 col-7">
-
-                <div class="header_left_content">
-                    <div class="menu_icon"><img src="./icons8-menu-24.png" alt=""></div>
-                    <div class="go_ceshless">GO <br>CASHLESS!</div>
-                    <div class="header_list">
-                        <ul>
-                            <li>ALL-IN-ONE APP</li>
-                            <li>PAY FOR ALL DIALY NEEDS</li>
-                            <li>APP IN YOUR LANGUAGE</li>
-                        </ul>
-                        <button class="button">DOWNLOAD NOW</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-12 col-sm-12 col-md-12 col-12 col-lg-12 col-12">
-                <div class="header_last_content">
-                    <p>A COMPLETE FINANCIAL </p> NEEDS <span class="text_color">IN ON APP</span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-<!-- --------------------------------------------------- Section 1 part Start ------------------------------------------------- -->
-
-    <section>
-        <div class="">
-            <div class="row" style="background-color: rgb(190, 188, 188);border-radius: 30px;margin:50px ;">
-                <div class="col-xl-4 col-sm-12 col-md-12 col-lg-4 col-12 section_block">
-                    <div class="">
-                        <p class="pay_img"><img src="./mobile-payment.png" alt="pay" height="70px" width="70px"></p>
-                        <p class="support_text"><b>SUPPORT ALL PAYMENT</b></p>
-                        <p class="lorem_text">LOREM IPSUM DOLOR SIT AMET.</p>
-
-                    </div>
-                </div>
-                <div class="col-xl-4 col-sm-12 col-md-12 col-lg-4 col-12 section_block">
-                    <div class="">
-                        <p class="pay_img"><img src="./security.png" alt="pay" height="70px" width="70px"></p>
-                        <p class="support_text"><b>HIGH SECURITY</b></p>
-                        <p class="lorem_text">LOREM IPSUM DOLOR SIT AMET.</p>
-
-                    </div>
-                </div>
-                <div class="col-xl-4 col-sm-12 col-md-12 col-lg-4 col-12 section_block">
-                    <div class="">
-                        <p class="pay_img"><img src="./interaction.png" alt="pay" height="70px" width="70px"></p>
-                        <p class="support_text"><b>100% DIGITAL</b></p>
-                        <p class="lorem_text">LOREM IPSUM DOLOR SIT AMET.</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<!-- --------------------------------------------------- Section 2 Part satrt ------------------------------------------------------------ -->
-    <section>
-        <div class="row">
-            <div class="col-xl-6 col-sm-12 col-md-12 col-lg-6 col-12">
-                <div style="padding-left: 50px;">
-                    <div class="mid_text">
-                        <p>LET'S MAKES YOUR FINANCE <br>ACTIVITY GOING <span class="m_color">DIGITALIZE</span></p>
-                    </div>
-                    <div class="m_lorem_text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
-                        deleniti dolores itaque mollitia esse beatae omnis enim totam veniam obcaecati doloribus
-                        molestias quam
-                        voluptas ad, maxime quasi fugit repudiandae ipsa.
-                    </div>
-                    <div><button class="btn">LEARN MORE</button></div>
-
-                </div>
-            </div>
-            <div class="col-xl-6 col-sm-12 col-md-12 col-lg-6 col-12">
-                <div class=""><img src="./mobile.jpg" alt="" height="100%" width="200px" class="mobile_imge"></div>
-            </div>
-        </div>
-    </section>
-
-<!-- --------------------------------------------------- Section 3 part Start ------------------------------------------------- -->
-
-    <section>
-        <div class="row">
-
-            <div class="col-xl-6 col-sm-12 col-md-12 col-lg-6 col-12">
-                <div class="video">
-                    <video width="500px" height="250px" controls>
-                        <source src="movie.mp4" type="video/mp4">
-                        <source src="movie.ogg" type="video/ogg">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-            <div class="col-xl-6 col-sm-12 col-md-12 col-lg-6 col-12">
-                <div style="padding-left: 50px;margin-top: 50PX;">
-                    <div class="mid_text">
-                        <p>WE COMMIT TO GIVE YOU <br>THE BEST <span class="m_color">EXPERIENCE</span></p>
-                    </div>
-                    <div class="m_lorem_text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
-                        deleniti dolores itaque mollitia esse beatae omnis enim totam veniam obcaecati doloribus
-                        molestias quam
-                        voluptas ad, maxime quasi fugit repudiandae ipsa.
-                    </div>
-                    <div><button class="btn">LEARN MORE</button></div>
-
-                </div>
-            </div>
-
-        </div>
-    </section>
-    
-<!-- --------------------------------------------------- Section 4 part Start ------------------------------------------------- -->
-    <section>
-        <div class="row">
-            <div class="col-xl-12 col-sm-12 col-md-12 col-lg-12 col-12">
-                <div class="midd_text">
-                    <p>OUR LATEST TECHNOLOGY $ <br> <span class="m_color">INTERSTING FEATURES</span></p>
-                </div>
-                <div class="m_content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cum at repellendus minus voluptatibus 
-                    quia voluptates, aliquam a magni dolores accusantium culpa aperiam deleniti.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
